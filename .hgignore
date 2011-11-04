@@ -1,0 +1,12 @@
+syntax: glob
+*.orig
+*.rej
+*~
+*.elc
+syntax: regexp
+web-vcs-log.org
+tramp
+site-lisp/nxhtml/
+.*\#.*\#$
+
+
