@@ -3,10 +3,12 @@ syntax: glob
 *.rej
 *~
 *.elc
+init-custom.el
+recipes/*
+el-get/*
+elpa/*
+.org-id-locations
 syntax: regexp
-web-vcs-log.org
-tramp
-site-lisp/nxhtml/
+^site-lisp/(?!\.hidden).+$
+^tramp$
 .*\#.*\#$
-
-

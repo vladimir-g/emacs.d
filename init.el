@@ -1,45 +1,36 @@
 ;; Config file directory
-(defvar emacs-home "~/.emacs.d/")
-;; Packages directory
-(defvar home-site-lisp (concat
-                        emacs-home "site-lisp/"))
-(add-to-list 'load-path emacs-home)
-(add-to-list 'load-path home-site-lisp)
+(let ((default-directory user-emacs-directory))
+  (setq rc-dir-path (expand-file-name "rc")
+        el-get-top-path (expand-file-name "el-get")
+        el-get-dir-path (expand-file-name "el-get/el-get")
+        home-site-lisp-path (expand-file-name "site-lisp")))
 
-;; Load modules
-(require 'php-mode)
-(require 'quack)
-(require 'mercurial)
-(require 'revbufs)
-(require 'web-vcs)
+;; Add directories to load path
+(setq load-directories
+      '(rc-dir-path
+        el-get-dir-path
+        home-site-lisp-path))
+
+(dolist (name load-directories)
+  (add-to-list 'load-path (eval name)))
+
+;; Custom file
+(setq custom-file (expand-file-name "init-custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+
+;; el-get stuff
+(require 'rc-el-get)
+(el-get 'sync my-packages)
 
 ;; My custom configuration
 
 ;; Indent
-(load-library "my-indent")
-;; Look and feel
-(load-library "my-look-n-feel")
-;; CEDET
-(load-library "my-cedet")
-;; Tramp
-(load-library "my-tramp")
-;; W3m
-(load-library "my-w3m")
-;; Ropemacs
-(load-library "my-python")
-;; Lisp
-(load-library "my-lisp")
-;; nXhtml
-(load-library "my-nxhtml")
-;; Lua mode
-(load-library "my-lua")
-;; TeX
-(load-library "my-tex")
-;; Buffers
-(load-library "my-buffers")
+(setq-default indent-tabs-mode nil)
 
-
-;; Custom file
-(setq custom-file (concat 
-                   emacs-home "init-custom.el"))
-(load custom-file 'noerror)
+;; Load rc files
+(require 'rc-look-and-feel)
+(require 'rc-tramp)
+(require 'rc-ido)
+(require 'rc-uniquify)
+;; Utilities for config file
+(require 'rc-utils)
