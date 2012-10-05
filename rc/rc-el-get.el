@@ -40,12 +40,7 @@
                         (add-hook 'python-mode-hook 
                                   '(lambda ()
                                      (require 'pymacs)
-                                     (pymacs-load "ropemacs" "rope-")))))
-        (:name nxhtml
-               :after (lambda ()
-                        (setq 
-                         mumamo-background-colors nil
-                         rng-nxml-auto-validate-flag nil)))))
+                                     (pymacs-load "ropemacs" "rope-")))))))
 
 ;; Packages with default settings or with init files
 (defvar my-packages)
@@ -55,7 +50,7 @@
         yaml-mode 
         lua-mode
         pymacs
-        jinja
+        go-mode
         revbufs
         quack))
 
