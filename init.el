@@ -1,6 +1,6 @@
 ;; Config file directory
 (let ((default-directory user-emacs-directory))
-  (setq rc-dir-path (expand-file-name "rc")
+  (setq rc-dir-path (expand-file-name "rc.d")
         el-get-top-path (expand-file-name "el-get")
         el-get-dir-path (expand-file-name "el-get/el-get")
         home-site-lisp-path (expand-file-name "site-lisp")))
@@ -20,6 +20,7 @@
 
 ;; el-get stuff
 (require 'rc-el-get)
+(el-get-cleanup my-packages)
 (el-get 'sync my-packages)
 
 ;; My custom configuration
