@@ -53,9 +53,10 @@
         revbufs
         web-mode
         jinja2-mode
-        python-mode
+        python
         mmm-mako
         ahg
+        org-mode
         quack))
 
 (when (el-get-executable-find "cvs")
