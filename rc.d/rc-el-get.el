@@ -17,26 +17,14 @@
 ;; Customized sources
 (setq el-get-sources
       '((:name slime
-               :features slime-autoloads
-               :after (progn 
+               :before (progn 
                         (setq inferior-lisp-program "sbcl")
-                        (add-hook 'lisp-mode-hook 
-                                  (lambda ()
-                                    (cond ((not (featurep 'slime))
-                                           (require 'slime)
-                                           (normal-mode)))))
-                        (eval-after-load "slime"
-                          '(progn
-                             (add-to-list 
-                              'load-path 
-                              (expand-file-name "slime/contrib"
-                                                el-get-top-path)
-                              (slime-setup '(slime-fancy 
-                                             slime-asdf 
-                                             slime-banner))
-                              (setq slime-complete-symbol*-fancy t)
-                              (setq slime-complete-symbol-function
-                                    'slime-fuzzy-complete-symbol))))))
+                        (slime-setup '(slime-fancy
+                                       slime-asdf 
+                                       slime-banner))
+                        (setq slime-complete-symbol*-fancy t)
+                        (setq slime-complete-symbol-function
+                              'slime-fuzzy-complete-symbol)))
         (:name mmm-mode
                :after (progn
                         (setq mmm-submode-decoration-level 0)
