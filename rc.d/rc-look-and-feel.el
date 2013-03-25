@@ -3,7 +3,7 @@
 ;; 
 
 (set-frame-font "DejaVu Sans Mono-10")
-(add-to-list 'default-frame-alist '(set-frame-font "DejaVu Sans Mono-10"))
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)

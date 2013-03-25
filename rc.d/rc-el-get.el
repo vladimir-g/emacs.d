@@ -49,7 +49,10 @@
 
 (when (el-get-executable-find "cvs")
   (progn
-    (add-to-list 'my-packages 'auctex)
+    (add-to-list 'el-get-sources 
+                 '(:name auctex
+                         :after (progn
+                                  (setq TeX-PDF-mode t))))
     (add-to-list 'el-get-sources 
                  '(:name emacs-w3m
                          :after (progn

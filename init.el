@@ -32,6 +32,7 @@
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
 (require 'rc-ido)
+(require 'rc-ediff)
 (require 'rc-uniquify)
 ;; Utilities for config file
 (require 'rc-utils)
