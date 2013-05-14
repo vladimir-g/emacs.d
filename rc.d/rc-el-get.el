@@ -18,13 +18,16 @@
 (setq el-get-sources
       '((:name slime
                :before (progn 
-                        (setq inferior-lisp-program "sbcl")
-                        (slime-setup '(slime-fancy
-                                       slime-asdf 
-                                       slime-banner))
-                        (setq slime-complete-symbol*-fancy t)
-                        (setq slime-complete-symbol-function
-                              'slime-fuzzy-complete-symbol)))
+                         (setq inferior-lisp-program "sbcl")
+                         (slime-setup '(slime-fancy
+                                        slime-asdf 
+                                        slime-banner))
+                         (setq slime-complete-symbol*-fancy t)
+                         (setq slime-complete-symbol-function
+                               'slime-fuzzy-complete-symbol)))
+        (:name auctex
+               :after (progn
+                        (setq TeX-PDF-mode t)))
         (:name mmm-mode
                :after (progn
                         (setq mmm-submode-decoration-level 0)
@@ -42,6 +45,7 @@
         web-mode
         jinja2-mode
         python
+        hy-mode
         mmm-mako
         ahg
         org-mode
@@ -49,10 +53,6 @@
 
 (when (el-get-executable-find "cvs")
   (progn
-    (add-to-list 'el-get-sources 
-                 '(:name auctex
-                         :after (progn
-                                  (setq TeX-PDF-mode t))))
     (add-to-list 'el-get-sources 
                  '(:name emacs-w3m
                          :after (progn
