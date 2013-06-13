@@ -36,3 +36,6 @@
 (require 'rc-uniquify)
 ;; Utilities for config file
 (require 'rc-utils)
+
+;; Additional packages
+(require 'python)
