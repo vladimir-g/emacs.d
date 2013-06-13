@@ -44,7 +44,6 @@
         revbufs
         web-mode
         jinja2-mode
-        python
         hy-mode
         mmm-mako
         ahg
