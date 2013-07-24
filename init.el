@@ -28,6 +28,9 @@
 ;; Indent
 (setq-default indent-tabs-mode nil)
 
+;; Enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+
 ;; Load rc files
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
@@ -39,3 +42,4 @@
 
 ;; Additional packages
 (require 'python)
+
