@@ -7,8 +7,9 @@
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
 (setq ido-enable-tramp-completion nil)
-(setq ido-use-filename-at-point 'guess)
+(setq ido-use-filename-at-point nil)
 (setq ido-show-dot-for-dired t)
+(setq ido-enable-last-directory-history nil)
 ;; Show buffer even it's opened somewhere
 (setq ido-default-file-method 'selected-window)
 
