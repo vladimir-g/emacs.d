@@ -16,15 +16,15 @@
 
 ;; Customized sources
 (setq el-get-sources
-      '((:name slime
-               :before (progn 
-                         (setq inferior-lisp-program "sbcl")
-                         (slime-setup '(slime-fancy
-                                        slime-asdf 
-                                        slime-banner))
-                         (setq slime-complete-symbol*-fancy t)
-                         (setq slime-complete-symbol-function
-                               'slime-fuzzy-complete-symbol)))
+      '(;; (:name slime
+      ;;          :before (progn 
+      ;;                    (setq inferior-lisp-program "sbcl")
+      ;;                    (slime-setup '(slime-fancy
+      ;;                                   slime-asdf 
+      ;;                                   slime-banner))
+      ;;                    (setq slime-complete-symbol*-fancy t)
+      ;;                    (setq slime-complete-symbol-function
+      ;;                          'slime-fuzzy-complete-symbol)))
         (:name auctex
                :after (progn
                         (setq TeX-PDF-mode t)))
@@ -37,7 +37,7 @@
 (defvar my-packages)
 (setq my-packages
       '(el-get
-        php-mode-improved 
+        php-mode-improved
         yaml-mode 
         lua-mode
         go-mode

@@ -31,6 +31,9 @@
 ;; Enable narrow-to-region
 (put 'narrow-to-region 'disabled nil)
 
+;; Enable dired in same buffer
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; Load rc files
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
@@ -42,4 +45,3 @@
 
 ;; Additional packages
 (require 'python)
-
