@@ -12,6 +12,8 @@
 (setq ido-enable-last-directory-history nil)
 ;; Show buffer even it's opened somewhere
 (setq ido-default-file-method 'selected-window)
+(setq ido-default-buffer-method 'selected-window)
+(add-to-list 'ido-work-directory-list-ignore-regexps tramp-file-name-regexp)
 
 ;; Preventing auto-searches unless called explicitly
 (setq ido-auto-merge-work-directories-length -1)
