@@ -38,6 +38,7 @@
 (setq my-packages
       '(el-get
         php-mode-improved
+        magit
         yaml-mode 
         lua-mode
         go-mode
