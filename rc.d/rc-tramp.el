@@ -11,4 +11,6 @@
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
 
+(setq tramp-auto-save-directory "/tmp")
+
 (provide 'rc-tramp)

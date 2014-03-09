@@ -62,10 +62,12 @@ Semantic, and Ansi-Color faces are included.")
    `(fringe ((,class (:background "#405060"))))
    `(highlight ((,class (:foreground "#2e3436" :background "darkgreen"))))
    `(region ((,class (:background "DarkCyan"))))
-   `(secondary-selection ((,class (:foreground "gray10" :background "yellow"))))
+   `(secondary-selection ((,class (:foreground "green" :background "#373737"))))
    `(isearch ((,class (:background "palevioletred2" :foreground "brown4"))))
    `(lazy-highlight ((,class (:background "paleturquoise4"))))
    `(trailing-whitespace ((,class (:background "#102e4e"))))
+   `(diff-header ((,class (:background "#7a7a79"))))
+   `(diff-file-header ((,class (:background "DarkSlateGray"))))
    ;; Mode line faces
    `(mode-line ((,class
 		 (:box (:line-width -1 :style released-button)
