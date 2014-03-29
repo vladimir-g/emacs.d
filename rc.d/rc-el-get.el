@@ -57,7 +57,8 @@
                  '(:name emacs-w3m
                          :after (progn
                                   (setq w3m-use-cookies t)
-                                  (setq w3m-cookie-accept-bad-cookies t))))))
+                                  (setq w3m-cookie-accept-bad-cookies t)
+                                  (defun w3m-markup-urls-nobreak () nil))))))
 
 (setq my-packages
       (append
