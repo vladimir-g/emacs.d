@@ -17,7 +17,7 @@
              (expand-file-name "themes" 
                                user-emacs-directory))
 
-(load-theme 'terminal-dark)
+(load-theme 'terminal-dark t)
 
 (provide 'rc-look-and-feel)
 
