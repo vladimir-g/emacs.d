@@ -37,7 +37,7 @@
 (defvar my-packages)
 (setq my-packages
       '(el-get
-        php-mode-improved
+        php-mode
         magit
         yaml-mode 
         lua-mode
