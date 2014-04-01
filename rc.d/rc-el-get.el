@@ -9,7 +9,8 @@
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (let (el-get-master-branch)
       (goto-char (point-max))
-      (eval-print-last-sexp))))
+      (eval-print-last-sexp)))
+  (el-get-elpa-build-local-recipes))
 
 (add-to-list 'el-get-recipe-path 
              (expand-file-name "recipes" user-emacs-directory))
@@ -49,6 +50,8 @@
         mmm-mako
         ahg
         org-mode
+        sws-mode
+        stylus-mode
         quack))
 
 (when (el-get-executable-find "cvs")
