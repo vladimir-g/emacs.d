@@ -48,7 +48,6 @@
         jinja2-mode
         markdown-mode
         hy-mode
-        mmm-mako
         ahg
         org-mode
         sws-mode
