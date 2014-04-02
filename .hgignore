@@ -8,6 +8,9 @@ init-custom.el
 el-get/*
 elpa/*
 .org-id-locations
+eshell/history
+eshell/lastdir
+url/cookies
 syntax: regexp
 ^site-lisp/(?!\.hidden).+$
 ^tramp$
