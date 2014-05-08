@@ -26,6 +26,9 @@
       ;;                    (setq slime-complete-symbol*-fancy t)
       ;;                    (setq slime-complete-symbol-function
       ;;                          'slime-fuzzy-complete-symbol)))
+        (:name jinja2-mode
+               :after (progn
+                        (add-to-list 'auto-mode-alist '("\\.volt$" . jinja2-mode))))
         (:name auctex
                :after (progn
                         (setq TeX-PDF-mode t)))
@@ -45,7 +48,6 @@
         go-mode
         revbufs
         web-mode
-        jinja2-mode
         markdown-mode
         hy-mode
         ahg
