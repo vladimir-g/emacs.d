@@ -33,6 +33,7 @@
 
 ;; Enable dired in same buffer
 (put 'dired-find-alternate-file 'disabled nil)
+(setq dired-dwim-target t)
 
 ;; Load rc files
 (require 'rc-look-and-feel)

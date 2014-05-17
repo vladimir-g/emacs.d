@@ -28,7 +28,8 @@
       ;;                          'slime-fuzzy-complete-symbol)))
         (:name jinja2-mode
                :after (progn
-                        (add-to-list 'auto-mode-alist '("\\.volt$" . jinja2-mode))))
+                        (add-to-list 'auto-mode-alist '("\\.volt$" . jinja2-mode))
+                        (add-to-list 'auto-mode-alist '("\\.twig$" . jinja2-mode))))
         (:name auctex
                :after (progn
                         (setq TeX-PDF-mode t)))
