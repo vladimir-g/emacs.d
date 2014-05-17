@@ -7,7 +7,7 @@
 (setq password-cache-expiry nil)
 
 (add-to-list 'tramp-default-proxies-alist
-             '(nil "\\`root\\'" "/ssh:%h:"))
+             '(nil "\\`rroot\\'" "/ssh:%h:"))
 (add-to-list 'tramp-default-proxies-alist
              '((regexp-quote (system-name)) nil nil))
 
