@@ -53,6 +53,7 @@
         hy-mode
         ahg
         org-mode
+        less-css-mode
         sws-mode
         stylus-mode
         quack))
