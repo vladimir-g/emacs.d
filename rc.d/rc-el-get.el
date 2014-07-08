@@ -56,6 +56,7 @@
         less-css-mode
         sws-mode
         stylus-mode
+        paredit
         quack))
 
 (when (el-get-executable-find "cvs")
