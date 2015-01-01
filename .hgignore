@@ -3,6 +3,8 @@ syntax: glob
 *.rej
 *~
 *.elc
+url/*
+games/*
 init-custom.el
 #recipes/*
 el-get/*
