@@ -139,6 +139,9 @@ Semantic, and Ansi-Color faces are included.")
    ;; Flyspell faces
    `(flyspell-duplicate ((,class (:underline ,orange-1))))
    `(flyspell-incorrect ((,class (:underline ,red-1))))
+   ;; ERC faces
+   `(erc-input-face ((t (:foreground ,blue-1))))
+   `(erc-my-nick-face ((t (:foreground ,blue-1))))
    ;; Semantic faces
    `(semantic-decoration-on-includes ((,class (:underline ,alum-4))))
    `(semantic-decoration-on-private-members-face
