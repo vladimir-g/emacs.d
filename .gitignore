@@ -1,0 +1,15 @@
+*.orig
+*.rej
+*.elc
+*~
+/url/*
+/games/*
+/el-get/*
+/elpa/*
+.org-id-locations
+/eshell/history
+/eshell/lastdir
+\#*#
+init-custom.el
+tramp
+/.hg/
