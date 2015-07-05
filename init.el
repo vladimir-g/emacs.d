@@ -41,6 +41,8 @@
 (require 'rc-ido)
 (require 'rc-ediff)
 (require 'rc-uniquify)
+(require 'rc-c)
+(require 'rc-erc)
 ;; Utilities for config file
 (require 'rc-utils)
 

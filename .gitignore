@@ -13,3 +13,5 @@
 init-custom.el
 tramp
 /.hg/
+/irc-logs/
+.ercpass
