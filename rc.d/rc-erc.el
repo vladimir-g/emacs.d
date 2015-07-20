@@ -7,6 +7,14 @@
 (define-key erc-mode-map (kbd "<C-return>") 'erc-send-current-line)
 (define-key erc-mode-map (kbd "C-j") 'erc-send-current-line)
 
+;; Urgency hints
+(defun notify-wrapper (orig-fun &rest args)
+  (let ((res (apply orig-fun args)))
+    (x-urgency-hint (selected-frame) t)
+    res))
+
+(advice-add 'erc-notifications-notify :around #'notify-wrapper)
+
 ;; Paths
 (let ((default-directory user-emacs-directory))
   (setq erc-log-channels-directory (expand-file-name "irc-logs/")))

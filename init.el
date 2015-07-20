@@ -35,6 +35,9 @@
 (put 'dired-find-alternate-file 'disabled nil)
 (setq dired-dwim-target t)
 
+;; Utilities for config file
+(require 'rc-utils)
+
 ;; Load rc files
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
@@ -43,8 +46,6 @@
 (require 'rc-uniquify)
 (require 'rc-c)
 (require 'rc-erc)
-;; Utilities for config file
-(require 'rc-utils)
 
 ;; Additional packages
 (require 'python)

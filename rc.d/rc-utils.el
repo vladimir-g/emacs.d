@@ -28,5 +28,16 @@ Taken from emacswiki."
         (backward-char) (insert "\n"))
       (indent-region begin end)))
 
+(defun x-urgency-hint (frame arg &optional source)
+  "Set urgency hint (for XWindow). From
+  http://www.emacswiki.org/emacs/JabberEl"
+  (let* ((wm-hints (append (x-window-property 
+			    "WM_HINTS" frame "WM_HINTS" source nil t) nil))
+	 (flags (car wm-hints)))
+    (setcar wm-hints
+	    (if arg
+		(logior flags #x100)
+	      (logand flags (lognot #x100))))
+    (x-change-window-property "WM_HINTS" wm-hints frame "WM_HINTS" 32 t)))
 
 (provide 'rc-utils)
