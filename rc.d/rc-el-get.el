@@ -17,15 +17,12 @@
 
 ;; Customized sources
 (setq el-get-sources
-      '(;; (:name slime
-      ;;          :before (progn 
-      ;;                    (setq inferior-lisp-program "sbcl")
-      ;;                    (slime-setup '(slime-fancy
-      ;;                                   slime-asdf 
-      ;;                                   slime-banner))
-      ;;                    (setq slime-complete-symbol*-fancy t)
-      ;;                    (setq slime-complete-symbol-function
-      ;;                          'slime-fuzzy-complete-symbol)))
+      '((:name slime
+               :before (progn 
+                         (setq inferior-lisp-program "sbcl")
+                         (slime-setup '(slime-fancy
+                                        slime-asdf 
+                                        slime-banner))))
         (:name jinja2-mode
                :after (progn
                         (add-to-list 'auto-mode-alist '("\\.volt$" . jinja2-mode))
