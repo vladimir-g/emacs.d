@@ -13,7 +13,7 @@
     (x-urgency-hint (selected-frame) t)
     res))
 
-(advice-add 'erc-notifications-notify :around #'notify-wrapper)
+;; (advice-add 'erc-notifications-notify :around #'notify-wrapper)
 
 ;; Paths
 (let ((default-directory user-emacs-directory))
