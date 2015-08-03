@@ -17,20 +17,15 @@
 (require 'use-package)
 
 ;; Packages without custom config
-(defun ensure-packages (packages)
-  (dolist (p packages)
-    (use-package package
-      :ensure t)))
-
-(ensure-packages '(php-mode
-                   lua-mode
-                   yaml-mode
-                   web-mode
-                   markdown-mode
-                   hy-mode
-                   ahg
-                   magit
-                   less-css-mode))
+(use-package php-mode :ensure t)
+(use-package lua-mode :ensure t)
+(use-package yaml-mode :ensure t)
+(use-package web-mode :ensure t)
+(use-package markdown-mode :ensure t)
+(use-package hy-mode :ensure t)
+(use-package ahg :ensure t)
+(use-package magit :ensure t)
+(use-package less-css-mode :ensure t)
 
 ;; Packages with custom config
 (use-package w3m
