@@ -1,4 +1,7 @@
+;;
 ;; Custom ERC configuration
+;;
+
 (require 'erc)
 
 (add-to-list 'erc-modules 'notifications)

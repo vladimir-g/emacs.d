@@ -1,44 +1,28 @@
 ;; Config file directory
 (let ((default-directory user-emacs-directory))
   (setq rc-dir-path (expand-file-name "rc.d")
-        el-get-top-path (expand-file-name "el-get")
-        el-get-dir-path (expand-file-name "el-get/el-get")
         home-site-lisp-path (expand-file-name "site-lisp")))
 
 ;; Add directories to load path
-(setq load-directories
-      '(rc-dir-path
-        el-get-dir-path
-        home-site-lisp-path))
-
-(dolist (name load-directories)
+(dolist (name '(rc-dir-path home-site-lisp-path))
   (add-to-list 'load-path (eval name)))
 
 ;; Custom file
 (setq custom-file (expand-file-name "init-custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
-;; el-get stuff
-(require 'rc-el-get)
-(el-get-cleanup my-packages)
-(el-get 'sync my-packages)
+;; (require 'package)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.org/packages/"))
 
-;; My custom configuration
-
-;; Indent
-(setq-default indent-tabs-mode nil)
-
-;; Enable narrow-to-region
-(put 'narrow-to-region 'disabled nil)
-
-;; Enable dired in same buffer
-(put 'dired-find-alternate-file 'disabled nil)
-(setq dired-dwim-target t)
 
 ;; Utilities for config file
 (require 'rc-utils)
 
-;; Load rc files
+;; Package.el
+(require 'rc-packages)
+
+;; Other rc files
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
 (require 'rc-ido)
@@ -49,3 +33,16 @@
 
 ;; Additional packages
 (require 'python)
+
+
+;; Additional config
+;; Indent
+(setq-default indent-tabs-mode nil)
+
+;; Enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+
+;; Dired customization
+(put 'dired-find-alternate-file 'disabled nil)
+(setq dired-dwim-target t)
+

@@ -1,7 +1,6 @@
 ;; 
-;; Additional utilities for config file work
+;; Some custom utilities
 ;; 
-
 
 (defun rc-byte-recompile ()
   "Recompile rc files directory."
@@ -22,11 +21,11 @@ by using nxml's indentation rules.
 Taken from emacswiki."
   (interactive "r")
   (save-excursion
-      (nxml-mode)
-      (goto-char begin)
-      (while (search-forward-regexp "\>[ \\t]*\<" nil t) 
-        (backward-char) (insert "\n"))
-      (indent-region begin end)))
+    (nxml-mode)
+    (goto-char begin)
+    (while (search-forward-regexp "\>[ \\t]*\<" nil t) 
+      (backward-char) (insert "\n"))
+    (indent-region begin end)))
 
 (defun x-urgency-hint (frame arg &optional source)
   "Set urgency hint (for XWindow). From
