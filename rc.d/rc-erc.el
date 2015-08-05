@@ -31,4 +31,32 @@
       ;; erc-log-write-after-send t
 ;; erc-log-write-after-insert t)
 
+(defun erc-split-line (longline)
+  "Split long lines with non-ascii characters properly. Works
+only with utf-8 at this time, sorry."
+  (let* ((target (erc-default-target))
+         ;; (coding (erc-coding-system-for-target target)))
+         (coding 'utf-8))
+    (when (consp coding)
+      (setq coding (cdr coding)))
+    (if (< (length (encode-coding-string longline coding)))
+           erc-split-line-length)
+        (list longline)
+      (let ((result "") (buf))
+        ;; Create list of encoded strings
+        (dolist (word (split-string longline " " nil))
+          (let* ((w (concat word " "))  ;FIXME last word doesn't need
+                                        ;a trailing space
+                 (encoded (encode-coding-string w coding)))
+            (when (> (+ (length result)
+                        (length encoded))
+                     erc-split-line-length)
+              (setf buf (append buf (list result)))
+              (setf result ""))
+            (setf result (concat result encoded))))
+        ;; Don't forget last element
+        (setf buf (append buf (list result)))
+        ;; Decode strings again
+        (mapcar (lambda (e) (decode-coding-string e coding)) buf)))))
+
 (provide 'rc-erc)
