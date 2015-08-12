@@ -2,8 +2,12 @@
 ;; Look and feel
 ;; 
 
-(set-frame-font "DejaVu Sans Mono-10")
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
+(let ((font (if (string-equal system-name "thinkpad")
+		"DejaVu Sans Mono-9"
+	      "DejaVu Sans Mono-10")))
+  (set-frame-font font)
+  (add-to-list 'default-frame-alist '(font . font)))
+    
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
