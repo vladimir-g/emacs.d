@@ -6,7 +6,7 @@
 		"DejaVu Sans Mono-9"
 	      "DejaVu Sans Mono-10")))
   (set-frame-font font)
-  (add-to-list 'default-frame-alist '(font . font)))
+  (add-to-list 'default-frame-alist (cons 'font font)))
     
 (tool-bar-mode -1)
 (menu-bar-mode -1)
