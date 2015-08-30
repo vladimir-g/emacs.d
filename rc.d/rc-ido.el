@@ -15,6 +15,9 @@
 (setq ido-default-buffer-method 'selected-window)
 (add-to-list 'ido-work-directory-list-ignore-regexps tramp-file-name-regexp)
 
+;; Ignore buffers
+(setq ido-ignore-buffers '("\\` " "magit-.+"))
+
 ;; Preventing auto-searches unless called explicitly
 (setq ido-auto-merge-work-directories-length -1)
 
