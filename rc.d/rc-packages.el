@@ -26,6 +26,7 @@
 (use-package ahg :ensure t)
 (use-package magit :ensure t)
 (use-package less-css-mode :ensure t)
+(use-package go-mode :ensure t)
 
 ;; Packages with custom config
 (use-package w3m
