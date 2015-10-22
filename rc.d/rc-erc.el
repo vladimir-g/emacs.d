@@ -57,6 +57,6 @@ only with utf-8 at this time, sorry."
         ;; Don't forget last element
         (setf buf (append buf (list result)))
         ;; Decode strings again
-        (mapcar (lambda (e) (decode-coding-string e coding)) buf)))))
+        (mapcar (lambda (e) (decode-coding-string e coding)) buf))))
 
 (provide 'rc-erc)
