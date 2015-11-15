@@ -37,6 +37,7 @@
 
 ;; Additional config
 ;; Indent
+(setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 
 ;; Enable narrow-to-region
