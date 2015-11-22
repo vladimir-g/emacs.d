@@ -8,11 +8,12 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
 ;; Auto-installation of use-package
-(if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
 (require 'use-package)
 
