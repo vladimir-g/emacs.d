@@ -55,7 +55,7 @@
 
 (use-package jinja2-mode
   :ensure
-  :mode (("\\.volt'" . jinja2-mode)
-	 ("\\.twig'" . jinja2-mode)))
+  :mode (("\\.volt" . jinja2-mode)
+	 ("\\.twig" . jinja2-mode)))
 
 (provide 'rc-packages)
