@@ -2,7 +2,7 @@
 ;; Look and feel
 ;; 
 
-(let ((font (if (string-equal system-name "thinkpad")
+(let ((font (if (string-prefix-p "thinkpad" system-name)
 		"DejaVu Sans Mono-9"
 	      "DejaVu Sans Mono-10")))
   (set-frame-font font)
