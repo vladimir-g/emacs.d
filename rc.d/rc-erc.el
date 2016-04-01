@@ -18,19 +18,6 @@
 
 ;; (advice-add 'erc-notifications-notify :around #'notify-wrapper)
 
-;; Paths
-(let ((default-directory user-emacs-directory))
-  (setq erc-log-channels-directory (expand-file-name "irc-logs/")))
-
-;; Logging
-(if (not (file-exists-p erc-log-channels-directory))
-    (mkdir erc-log-channels-directory t))
-
-(setq erc-save-buffer-on-part t
-      erc-save-queries-on-quit t)
-      ;; erc-log-write-after-send t
-;; erc-log-write-after-insert t)
-
 (defun erc-split-line (longline)
   "Split long lines with non-ascii characters properly. Works
 only with utf-8 at this time, sorry."
