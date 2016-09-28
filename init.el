@@ -1,4 +1,7 @@
 ;; Config file directory
+
+;; (package-initialize)
+
 (let ((default-directory user-emacs-directory))
   (setq rc-dir-path (expand-file-name "rc.d")
         home-site-lisp-path (expand-file-name "site-lisp")))
@@ -10,11 +13,6 @@
 ;; Custom file
 (setq custom-file (expand-file-name "init-custom.el" user-emacs-directory))
 (load custom-file 'noerror)
-
-;; (require 'package)
-;; (add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.org/packages/"))
-
 
 ;; Utilities for config file
 (require 'rc-utils)
