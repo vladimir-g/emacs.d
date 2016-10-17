@@ -21,7 +21,6 @@
 (use-package php-mode :ensure t)
 (use-package lua-mode :ensure t)
 (use-package yaml-mode :ensure t)
-(use-package web-mode :ensure t)
 (use-package markdown-mode :ensure t)
 (use-package hy-mode :ensure t)
 (use-package ahg :ensure t)
@@ -57,5 +56,9 @@
   :ensure
   :mode (("\\.volt" . jinja2-mode)
 	 ("\\.twig" . jinja2-mode)))
+
+(use-package web-mode
+  :ensure t
+  :mode (("\\.jsx" . web-mode)))
 
 (provide 'rc-packages)
