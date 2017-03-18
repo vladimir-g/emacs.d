@@ -18,7 +18,6 @@
 (require 'use-package)
 
 ;; Packages without custom config
-(use-package php-mode :ensure t)
 (use-package lua-mode :ensure t)
 (use-package yaml-mode :ensure t)
 (use-package markdown-mode :ensure t)
@@ -53,12 +52,17 @@
   (setq TeX-PDF-mode t))
 
 (use-package jinja2-mode
-  :ensure
+  :ensure t
   :mode (("\\.volt" . jinja2-mode)
 	 ("\\.twig" . jinja2-mode)))
 
 (use-package web-mode
   :ensure t
   :mode (("\\.jsx" . web-mode)))
+
+(use-package php-mode
+  :ensure t
+  :init
+  (add-hook 'php-mode-hook 'php-enable-psr2-coding-style))
 
 (provide 'rc-packages)
