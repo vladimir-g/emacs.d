@@ -54,7 +54,10 @@
 	 ("\\.twig" . jinja2-mode)))
 
 (use-package web-mode
-  :mode (("\\.jsx" . web-mode)))
+  :mode (("\\.jsx" . web-mode))
+  :config
+  ;; Disable auto indent because it is fucking slow
+  (setq web-mode-enable-auto-indentation nil))
 
 (use-package php-mode
   :init
