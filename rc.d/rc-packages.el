@@ -68,7 +68,7 @@
   (bbdb-initialize 'gnus 'message)
   (bbdb-mua-auto-update-init 'gnus 'message)
   (setq bbdb-mua-update-interactive-p '(query . create))
-  (setq bbdb-mua-pop-up 'horiz)
+  (setq bbdb-mua-pop-up nil)
   (setq bbdb-message-all-addresses t))
 
 (provide 'rc-packages)
