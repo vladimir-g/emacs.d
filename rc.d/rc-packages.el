@@ -57,7 +57,9 @@
   :mode (("\\.jsx" . web-mode))
   :config
   ;; Disable auto indent because it is fucking slow
-  (setq web-mode-enable-auto-indentation nil))
+  (setq web-mode-enable-auto-indentation nil)
+  ;; Disable auto-quote because it makes working with JSX worse
+  (setq web-mode-enable-auto-quoting nil))
 
 (use-package php-mode
   :init
