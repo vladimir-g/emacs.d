@@ -4,7 +4,7 @@
 
 (require 'erc)
 
-(add-to-list 'erc-modules 'notifications)
+(add-to-list 'erc-modules 'notifications 'hl-nicks)
 
 (define-key erc-mode-map (kbd "RET") nil)
 (define-key erc-mode-map (kbd "<C-return>") 'erc-send-current-line)
