@@ -56,12 +56,18 @@
 	 ("\\.twig" . jinja2-mode)))
 
 (use-package web-mode
-  :mode (("\\.jsx" . web-mode))
+  :mode (("\\.jsx" . web-mode)
+         ("\\.vue" . web-mode))
   :config
   ;; Disable auto indent because it is fucking slow
   (setq web-mode-enable-auto-indentation nil)
   ;; Disable auto-quote because it makes working with JSX worse
-  (setq web-mode-enable-auto-quoting nil))
+  (setq web-mode-enable-auto-quoting nil)
+  ;; Indentation processing
+  (setq web-mode-attr-indent-offset sgml-basic-offset)
+  (setq web-mode-markup-indent-offset sgml-basic-offset)
+  (setq web-mode-part-padding 0)
+  (setq web-mode-script-padding 0))
 
 (use-package php-mode
   :init
