@@ -28,6 +28,7 @@
 (require 'rc-uniquify)
 (require 'rc-c)
 (require 'rc-erc)
+(require 'rc-python)
 
 ;; Gnus init file (would load rc-gnus also)
 (setq gnus-init-file (expand-file-name "gnus.el" user-emacs-directory))
