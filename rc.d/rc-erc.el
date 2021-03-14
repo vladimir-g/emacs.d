@@ -46,4 +46,7 @@ only with utf-8 at this time, sorry."
         ;; Decode strings again
         (mapcar (lambda (e) (decode-coding-string e coding)) buf))))
 
+(setq local-erc-settings (expand-file-name "erc.el" user-emacs-directory))
+(load local-erc-settings 'noerror)
+
 (provide 'rc-erc)
