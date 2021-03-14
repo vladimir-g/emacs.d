@@ -29,6 +29,7 @@
 (use-package go-mode)
 (use-package qml-mode)
 (use-package erc-hl-nicks)
+(use-package cython-mode)
 
 ;; Packages with custom config
 (use-package w3m
