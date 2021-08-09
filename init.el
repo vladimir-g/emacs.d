@@ -10,6 +10,10 @@
 (dolist (name '(rc-dir-path home-site-lisp-path))
   (add-to-list 'load-path (eval name)))
 
+;; Recursively add site-lisp subdirectories too
+(let ((default-directory home-site-lisp-path))
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;; Custom file
 (setq custom-file (expand-file-name "init-custom.el" user-emacs-directory))
 (load custom-file 'noerror)
