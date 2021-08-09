@@ -25,7 +25,6 @@
 (use-package hy-mode)
 (use-package ahg)
 (use-package magit)
-(use-package less-css-mode)
 (use-package go-mode)
 (use-package qml-mode)
 (use-package erc-hl-nicks)
@@ -83,8 +82,9 @@
   (setq bbdb-message-all-addresses t))
 
 (use-package d-mode
-  :config
-  (c-set-style "bsd")
-  (setq c-basic-offset 4))
+  :init
+  (add-hook 'd-mode-hook (lambda ()
+                           (c-set-style "bsd")
+                           (setq c-basic-offset 4))))
 
 (provide 'rc-packages)
