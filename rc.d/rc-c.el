@@ -6,6 +6,6 @@
   (setq c-basic-offset 4))
 
 (add-hook 'c++-mode-hook 'custom-c++-mode-hook)
-(add-hook 'c-mode-hook 'custom-c++-mode-hook)
+(add-hook 'c-mode-hook 'custom-c-mode-hook)
 
 (provide 'rc-c)

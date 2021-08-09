@@ -82,4 +82,9 @@
   (setq bbdb-mua-pop-up nil)
   (setq bbdb-message-all-addresses t))
 
+(use-package d-mode
+  :config
+  (c-set-style "bsd")
+  (setq c-basic-offset 4))
+
 (provide 'rc-packages)
