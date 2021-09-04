@@ -29,6 +29,9 @@
 (use-package qml-mode)
 (use-package erc-hl-nicks)
 (use-package cython-mode)
+(use-package pyvenv)
+(use-package eglot)
+(use-package company)
 
 ;; Packages with custom config
 (use-package w3m
