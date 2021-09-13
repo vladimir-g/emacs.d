@@ -31,7 +31,9 @@
 (use-package cython-mode)
 (use-package pyvenv)
 (use-package eglot)
-(use-package company)
+(use-package company
+  :init
+  (add-hook 'eglot-managed-mode-hook #'(lambda () (company-mode 1))))
 
 ;; Packages with custom config
 (use-package w3m
