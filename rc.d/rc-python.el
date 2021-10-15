@@ -5,6 +5,8 @@
   (lambda () (setq-local comment-inline-offset 2)))
 
 ;; Enable pyvenv-mode everywhere
+;; Example for .dir-locals.el:
+;; ((python-mode . ((pyvenv-activate . "/path/to/env/"))))
 (pyvenv-mode 1)
 
 (provide 'rc-python)
