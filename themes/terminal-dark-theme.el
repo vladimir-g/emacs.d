@@ -1,94 +1,75 @@
-;;; tango-dark-theme.el --- Tango-based custom theme for faces
-
-;; Copyright (C) 2010-2012 Free Software Foundation, Inc.
-
-;; Authors: Chong Yidong <cyd@stupidchicken>
-;;          Jan Moringen <jan.moringen@uni-bielefeld.de>
-
-;; This file is part of GNU Emacs.
-
-;; GNU Emacs is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-
-;;; Commentary
-
-;; The colors in this theme come from the Tango palette, which is in
-;; the public domain: http://tango.freedesktop.org/
-
-;;; Code:
+;;; terminal-dark-theme.el --- Old-style terminal-like theme
 
 (deftheme terminal-dark
-  "Face colors using the Tango palette (dark background).
-Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
-Semantic, and Ansi-Color faces are included.")
+  "Old-style terminal theme with green text and dark background.")
 
 (let ((class '((class color) (min-colors 89)))
-      ;; Tango palette colors.
-      (dark "#060606") (bright-green "#00D600")
+      (dark-bg "#060606") (dark-bg-1 "#222") (black "black")
+      (green "green") (green-fg "#00D600") (gray "gray") (brown-4 "brown4")
+      (deep-blue "#405060") (yellow "yellow")
+      (pale-turquoise-4 "PaleTurquoise4")
+      (light-gray "LightGray") (deep-gray "#373737") (dark-green "DarkGreen")
+      (dark-cyan "DarkCyan") (dim-gray "DimGray")
+      (pale-violet-red-2 "PaleVioletRed2")
+      (dark-slate-gray "DarkSlateGray")
+      (blue-4 "#7d7dfb")                ;FG blue
+      (cadet-blue-1 "CadetBlue1")       ;FG KW
+      (gray-1 "#7a7a79")
+      (light-brown "burlywood")
+      (gold "gold")
       (butter-1 "#fce94f") (butter-2 "#edd400") (butter-3 "#c4a000")
-      (orange-1 "#fcaf3e") (orange-2 "#f57900") (orange-3 "#ce5c00")
-      (choc-1 "#e9b96e") (choc-2 "#c17d11") (choc-3 "#8f5902")
-      (cham-1 "#8ae234") (cham-2 "#73d216") (cham-3 "#4e9a06")
-      (blue-1 "#729fcf") (blue-2 "#3465a4") (blue-3 "#204a87")
-      (plum-1 "#ad7fa8") (plum-2 "#75507b") (plum-3 "#5c3566")
-      (red-1 "#ef2929")  (red-2 "#cc0000")  (red-3 "#a40000")
-      (alum-1 "#eeeeec") (alum-2 "#d3d7cf") (alum-3 "#babdb6")
-      (alum-4 "#888a85") (alum-5 "#555753") (alum-6 "#2e3436")
-      ;; Not in Tango palette; used for better contrast.
-      (cham-0 "#b4fa70") (blue-0 "#8cc4ff") (plum-0 "#e6a8df")
-      (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#212526"))
+      (orange-1 "#fcaf3e") (orange-2 "#f57900")
+      (choc-2 "#c17d11") (choc-3 "#8f5902")
+      (cham-0 "#b4fa70") (cham-1 "#8ae234") (cham-2 "#73d216")
+      (blue-0 "#8cc4ff") (blue-1 "#729fcf") (blue-2 "#3465a4")
+      (blue-3 "#204a87")
+      (plum-0 "#e6a8df") (plum-1 "#ad7fa8") (plum-2 "#75507b")
+      (plum-3 "#5c3566")
+      (red-0 "#ff4b4b") (red-1 "#ef2929")  (red-3 "#a40000")
+      (alum-1 "#eeeeec") (alum-4 "#888a85") (alum-5 "#555753")
+      (alum-5.5 "#41423f") (alum-6 "#2e3436") (alum-7 "#212526"))
 
   (custom-theme-set-faces
    'terminal-dark
-   ;; Ensure sufficient contrast on low-color terminals.
+   ;; Different settings for different terminals.
    `(default ((((class color) (min-colors 4096))
-	       (:foreground ,bright-green :background ,dark))
+	       (:foreground ,green-fg :background ,dark-bg))
 	      (((class color) (min-colors 256))
-	       (:foreground ,bright-green :background "#222"))
+	       (:foreground ,green-fg :background ,dark-bg-1))
 	      (,class
-	       (:foreground ,bright-green :background "black"))))
-   `(cursor ((,class (:background "green"))))
+	       (:foreground ,green-fg :background ,black))))
+   `(cursor ((,class (:background ,green))))
    ;; Highlighting faces
-   `(fringe ((,class (:background "#405060"))))
-   `(highlight ((,class (:foreground "light gray" :background "darkgreen"))))
-   `(region ((,class (:background "DarkCyan"))))
-   `(secondary-selection ((,class (:foreground "green" :background "#373737"))))
-   `(isearch ((,class (:background "palevioletred2" :foreground "brown4"))))
-   `(lazy-highlight ((,class (:background "paleturquoise4"))))
-   `(trailing-whitespace ((,class (:background "#102e4e"))))
-   `(diff-header ((,class (:background "#7a7a79"))))
-   `(diff-file-header ((,class (:background "DarkSlateGray"))))
+   `(fringe ((,class (:background ,deep-blue))))
+   `(highlight ((,class (:foreground ,light-gray :background ,dark-green))))
+   `(region ((,class (:background ,dark-cyan))))
+   `(secondary-selection ((,class (:foreground ,green :background ,deep-gray))))
+   `(isearch ((,class (:background ,pale-violet-red-2 :foreground ,brown-4))))
+   `(lazy-highlight ((,class (:background ,pale-turquoise-4))))
+   `(trailing-whitespace ((,class (:background ,deep-blue)))) 
+   `(diff-header ((,class (:background ,gray-1))))
+   `(diff-file-header ((,class (:background ,dark-slate-gray))))
    ;; Mode line faces
    `(mode-line ((,class
 		 (:box (:line-width -1 :style released-button)
-		  :background "gray" :foreground "black"))))
+		       :background ,gray :foreground ,black))))
    `(mode-line-inactive ((,class
 			  (:box (:line-width -1 :style released-button)
-			   :background "dim gray" :foreground "light gray"))))
+			        :background ,dim-gray :foreground ,light-gray))))
    ;; Escape and prompt faces
    `(minibuffer-prompt ((,class (:foreground ,cham-0))))
    `(escape-glyph ((,class (:foreground ,butter-3))))
    `(error ((,class (:foreground ,red-0))))
-   `(warning ((,class (:foreground "yellow"))))
+   `(warning ((,class (:foreground ,yellow))))
    `(success ((,class (:foreground ,cham-1))))
    ;; Font lock faces
    `(font-lock-builtin-face ((,class (:foreground "#d7ffff"))))
    `(font-lock-comment-face ((,class (:italic t :foreground "CadetBlue" :slant italic))))
-   `(font-lock-constant-face ((,class (:foreground "gold"))))
+   `(font-lock-constant-face ((,class (:foreground ,gold))))
    `(font-lock-function-name-face ((,class (:bold t :foreground "#afffff" :weight bold))))
-   `(font-lock-keyword-face ((,class (:bold t :foreground "#7d7dfb" :weight bold))))
-   `(font-lock-string-face ((,class (:foreground "burlywood"))))
-   `(font-lock-type-face ((,class (:foreground "CadetBlue1"))))
+   `(font-lock-keyword-face ((,class (:bold t :foreground ,blue-4 :weight bold))))
+   `(font-lock-string-face ((,class (:foreground ,light-brown))))
+   `(font-lock-type-face ((,class (:foreground ,cadet-blue-1))))
    `(font-lock-variable-name-face ((,class (:foreground "#ffd7af"))))
    ;; Button and link faces
    `(link ((,class (:underline t :foreground "#729fcf"))))
@@ -162,7 +143,7 @@ Semantic, and Ansi-Color faces are included.")
   (custom-theme-set-variables
    'terminal-dark
    `(ansi-color-names-vector [,alum-7 ,red-0 ,cham-0 ,butter-1
-			      ,blue-1 ,plum-1 ,blue-0 ,alum-1])))
+			              ,blue-1 ,plum-1 ,blue-0 ,alum-1])))
 
 (provide-theme 'terminal-dark)
 
