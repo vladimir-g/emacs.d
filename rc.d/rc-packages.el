@@ -34,6 +34,8 @@
 (use-package company
   :init
   (add-hook 'eglot-managed-mode-hook #'(lambda () (company-mode 1))))
+(use-package jenkinsfile-mode)
+(use-package phpunit)
 
 ;; Packages with custom config
 (use-package w3m
