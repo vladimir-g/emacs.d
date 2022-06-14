@@ -27,7 +27,7 @@
 ;; Other rc files
 (require 'rc-look-and-feel)
 (require 'rc-tramp)
-(require 'rc-ido)
+(require 'rc-complete)
 (require 'rc-ediff)
 (require 'rc-uniquify)
 (require 'rc-c)
