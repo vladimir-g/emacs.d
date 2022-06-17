@@ -8,5 +8,6 @@
 (setq auth-source-save-behavior nil)
 
 (setq tramp-auto-save-directory "/tmp")
+(setq tramp-allow-unsafe-temporary-files t)
 
 (provide 'rc-tramp)
