@@ -7,17 +7,16 @@
 (fido-mode t)
 (fido-vertical-mode t)
 
-(advice-add
- 'find-file
- :around
- (lambda (original-fun &optional prefix)
-   "Add PREFIX argument to call old-style find-file without fido."
-   (interactive "P")
-   (unwind-protect
-       (progn
-         (when prefix
-           (fido-mode -1))
-         (call-interactively original-fun))
-     (when prefix (fido-mode 1)))))
+(defun original-find-file ()
+  "Call old-style find-file without fido."
+  (interactive)
+  (unwind-protect
+      (progn
+        (fido-mode -1)
+        (message "hello")
+        (call-interactively 'find-file))
+    (fido-mode 1)))
+
+(global-set-key (kbd "C-c f") 'original-find-file)
 
 (provide 'rc-complete)
