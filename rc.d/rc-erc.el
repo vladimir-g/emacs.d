@@ -49,4 +49,17 @@ only with utf-8 at this time, sorry."
 (setq local-erc-settings (expand-file-name "erc.el" user-emacs-directory))
 (load local-erc-settings 'noerror)
 
+;; Example for local erc.el file
+;; (add-hook 'erc-after-connect
+;;     	  #'(lambda (SERVER NICK)
+;;     	      (cond
+;;     	       ((string-match "server\\.org" SERVER)
+;;     		(erc-message "PRIVMSG" "user@server.org AUTH username password")
+;;                 (erc-server-send "MODE username +x")))))
+
+;; (defun connect-to-server ()
+;;   (interactive)
+;;   (erc-tls :server "server.org" :port 6697 :nick "username" :password "pass"))
+
+
 (provide 'rc-erc)
