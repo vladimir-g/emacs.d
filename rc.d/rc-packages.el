@@ -31,13 +31,15 @@
 (use-package cython-mode)
 (use-package pyvenv)
 (use-package eglot)
+(use-package jenkinsfile-mode)
+(use-package phpunit)
+(use-package tuareg)
+
+;; Packages with custom config
 (use-package company
   :init
   (add-hook 'eglot-managed-mode-hook #'(lambda () (company-mode 1))))
-(use-package jenkinsfile-mode)
-(use-package phpunit)
 
-;; Packages with custom config
 (use-package w3m
   :config
   (setq w3m-use-cookies t
@@ -93,5 +95,11 @@
   (add-hook 'd-mode-hook (lambda ()
                            (c-set-style "bsd")
                            (setq c-basic-offset 4))))
+
+(use-package merlin-company)
+(use-package merlin
+  :init
+  (add-hook 'tuareg-mode-hook #'merlin-mode)
+  (add-hook 'merlin-mode-hook #'(lambda () (company-mode 1))))
 
 (provide 'rc-packages)

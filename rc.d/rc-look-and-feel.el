@@ -25,3 +25,9 @@
 
 (provide 'rc-look-and-feel)
 
+;; (add-hook 'after-make-frame-functions
+;;   (lambda ()
+;;     ;; we want some font only in GUI Emacs
+;;     (when (display-graphics-p)
+;;       (set-frame-font "DejaVu Sans Mono 28")))
+;; Note that the after-make-frame-functions hook isn’t run for the initial frame, so it’s often necessary to also add frame-related hook functions like that above to after-init-hook.
