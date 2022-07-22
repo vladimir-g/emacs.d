@@ -68,6 +68,7 @@
   :mode (("\\.jsx" . web-mode)
          ("\\.vue" . web-mode))
   :config
+  (require 'sgml-mode)
   ;; Disable auto indent because it is fucking slow
   (setq web-mode-enable-auto-indentation nil)
   ;; Disable auto-quote because it makes working with JSX worse
